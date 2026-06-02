@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>МедоЧехол — защита и лечение копыт без антибиотиков</title>
+  <!-- Google Fonts & Simple CSS Reset -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #FEFAF0;
+      color: #2D2A24;
+      line-height: 1.5;
+      scroll-behavior: smooth;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Typography */
+    h1, h2, h3 {
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    h2 {
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+      border-left: 5px solid #E6A017;
+      padding-left: 20px;
+    }
+
+    .section {
+      padding: 70px 0;
+      border-bottom: 1px solid #F0E4CC;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-block;
+      background-color: #E6A017;
+      color: white;
+      font-weight: 600;
+      padding: 12px 32px;
+      border-radius: 40px;
+      text-decoration: none;
+      transition: 0.2s ease;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+
+    .btn:hover {
+      background-color: #C57F0E;
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 2px solid #E6A017;
+      color: #E6A017;
+      box-shadow: none;
+    }
+
+    .btn-outline:hover {
+      background: #E6A017;
+      color: white;
+    }
+
+    /* Header / Nav */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .logo {
+      font-size: 1.7rem;
+      font-weight: 800;
+      background: #2D2A24;
+      color: #FEFAF0;
+      padding: 6px 18px;
+      border-radius: 60px;
+      letter-spacing: -0.02em;
+    }
+
+    .logo span {
+      color: #E6A017;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #2D2A24;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: #E6A017;
+    }
+
+    /* Hero */
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+      padding: 30px 0 30px;
+    }
+
+    .hero-text {
+      flex: 1;
+    }
+
+    .hero-text .badge {
+      background: #2D2A24;
+      color: #FEFAF0;
+      display: inline-block;
+      padding: 6px 16px;
+      border-radius: 60px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      margin-bottom: 24px;
+    }
+
+    .hero-text h1 {
+      font-size: 3.3rem;
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+
+    .hero-text p {
+      font-size: 1.2rem;
+      color: #4A453C;
+      margin-bottom: 32px;
+      max-width: 550px;
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 32px;
+      margin-top: 24px;
+    }
+
+    .stat {
+      font-weight: 700;
+    }
+
+    .stat-number {
+      font-size: 1.8rem;
+      color: #E6A017;
+    }
+
+    .hero-image {
+      flex: 1;
+      background: #E9DCC8;
+      border-radius: 48px;
+      padding: 40px 20px;
+      text-align: center;
+      min-height: 280px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      box-shadow: 0 20px 30px -15px rgba(0,0,0,0.05);
+    }
+
+    .hero-image h3 {
+      font-size: 2rem;
+      color: #2D2A24;
+    }
+
+    /* Grid cards */
+    .grid-2, .grid-3 {
+      display: grid;
+      gap: 32px;
+      margin-top: 40px;
+    }
+
+    .grid-2 {
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+
+    .grid-3 {
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    }
+
+    .card {
+      background: white;
+      border-radius: 28px;
+      padding: 28px;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.02);
+      border: 1px solid #F3E9DA;
+      transition: all 0.2s;
+    }
+
+    .card:hover {
+      border-color: #E6A01730;
+      box-shadow: 0 18px 30px -12px rgba(0,0,0,0.08);
+    }
+
+    .price-comparison {
+      background: #2D2A24;
+      color: white;
+      border-radius: 32px;
+      padding: 40px;
+      margin: 40px 0;
+    }
+
+    .comparison-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 12px 0;
+      border-bottom: 1px solid #4A453C;
+    }
+
+    .saving {
+      background: #E6A017;
+      color: #2D2A24;
+      font-weight: 700;
+      display: inline-block;
+      padding: 4px 14px;
+      border-radius: 60px;
+      font-size: 0.85rem;
+    }
+
+    .contact-info {
+      background: #FFF6EA;
+      border-radius: 32px;
+      padding: 40px;
+      text-align: center;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 0;
+      font-size: 0.85rem;
+      color: #6B6256;
+    }
+
+    @media (max-width: 780px) {
+      .hero-text h1 {
+        font-size: 2.2rem;
+      }
+      .section {
+        padding: 50px 0;
+      }
+      .navbar {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header style="border-bottom: 1px solid #F0E4CC;">
+  <div class="container">
+    <div class="navbar">
+      <div class="logo">МедоЧехол<span>®</span></div>
+      <div class="nav-links">
+        <a href="#problem">Проблема</a>
+        <a href="#product">Продукт</a>
+        <a href="#science">Наука</a>
+        <a href="#economy">Экономия</a>
+        <a href="#contacts">Контакты</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <!-- HERO -->
+  <div class="container">
+    <div class="hero">
+      <div class="hero-text">
+        <div class="badge">🐄 Первый в РФ комплекс «чехол + мёдовая мазь»</div>
+        <h1>Защита и лечение копыт<br>без антибиотиков</h1>
+        <p>Для КРС и МРС в суровых условиях. Снижаем затраты на лечение до 67% и исключаем каренцию.</p>
+        <a href="#contacts" class="btn">🏆 Стать партнёром</a>
+        <div class="hero-stats">
+          <div class="stat"><span class="stat-number">-67%</span><br>расходов на курс</div>
+          <div class="stat"><span class="stat-number">24ч</span><br>фиксация мази</div>
+          <div class="stat"><span class="stat-number">30+</span><br>циклов чехла</div>
+        </div>
+      </div>
+      <div class="hero-image">
+        <h3>🐝🐄</h3>
+        <p style="margin-top: 12px;">чехол + мазь из якутского мёда<br><strong>доступно, экологично, эффективно</strong></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ПРОБЛЕМА -->
+  <div class="section" id="problem">
+    <div class="container">
+      <h2>⚡ Проблема</h2>
+      <div class="grid-2">
+        <div class="card">
+          <h3>📉 До 20% поголовья</h3>
+          <p>В мелкотоварных хозяйствах Якутии ежегодно страдают от травм конечностей и вымени.</p>
+          <p style="margin-top: 16px;">🗑️ Причины: металлолом, камни, строймусор на выгулах.<br>⛑️ Последствия: хромота, инфекции, падение надоев на 10–30%.</p>
+        </div>
+        <div class="card">
+          <h3>💸 Дорого и неудобно</h3>
+          <p>Стандартные бинты намокают/сползают, антибиотики дают каренцию, а импортные мази недоступны.</p>
+          <p><strong>Курс лечения обходится в 5500 ₽</strong> на одно животное — малые хозяйства не вывозят.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ПРОДУКТ -->
+  <div class="section" style="background-color: #FDF7ED;" id="product">
+    <div class="container">
+      <h2>🍯 Что такое «МедоЧехол»</h2>
+      <div class="grid-2">
+        <div class="card">
+          <h3>🐝 Мёдовая мазь</h3>
+          <p><strong>Состав:</strong> 60% мёд, 25% воск, 5% прополис, 10% оливковое масло.</p>
+          <p>Антибактериальный, регенерирующий, противовоспалительный эффект. Без антибиотиков и гормонов.</p>
+          <p>✅ Используем некондиционный мёд → поддержка пчеловодов.</p>
+        </div>
+        <div class="card">
+          <h3>🛡️ Защитный чехол</h3>
+          <p>Дышащий полимерный материал + мягкий внутренний слой. Фиксация липучками, срок службы до 30 циклов стирки.</p>
+          <p>✅ Надевается поверх бинта, держится 24 часа, защищает от грязи и влаги.</p>
+        </div>
+      </div>
+      <div style="margin-top: 40px; background: white; border-radius: 32px; padding: 24px;">
+        <h3>📋 Протокол применения (1 раз в сутки)</h3>
+        <p>Очистка раны → нанесение мази → стерильный бинт → фиксация чехлом.</p>
+        <p>Чехол моется и дезинфицируется, мазь не требует каренции — молоко и мясо безопасны.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ЭКОНОМИЯ (кейс) -->
+  <div class="container">
+    <div class="price-comparison">
+      <h3 style="color: #E6A017; margin-bottom: 16px;">💰 Экономический эффект (курс 10 дней)</h3>
+      <div class="comparison-row">
+        <span>Статья затрат</span> <span>Традиционный подход</span> <span>МедоЧехол</span>
+      </div>
+      <div class="comparison-row">
+        <span>Лекарство</span> <span>300 ₽/день</span> <span>80 ₽/день</span>
+      </div>
+      <div class="comparison-row">
+        <span>Перевязка</span> <span>50 ₽/день</span> <span>0 ₽ (чехол многораз.)</span>
+      </div>
+      <div class="comparison-row">
+        <span>Работа (ветврач/фермер)</span> <span>200 ₽/день (2р/день)</span> <span>100 ₽/день (1р/день)</span>
+      </div>
+      <div class="comparison-row" style="border-bottom: none; font-weight: 700;">
+        <span>ИТОГО ЗА КУРС</span> <span>5 500 ₽</span> <span>1 800 ₽</span>
+      </div>
+      <div style="margin-top: 20px;"><span class="saving">▼ экономия 3 700 ₽ (67%)</span> на одном животном</div>
+    </div>
+  </div>
+
+  <!-- НАУЧНОЕ ОБОСНОВАНИЕ -->
+  <div class="section" id="science">
+    <div class="container">
+      <h2>🧪 Научное обоснование</h2>
+      <div class="grid-3">
+        <div class="card">
+          <h3>📖 Доказанная эффективность мёда</h3>
+          <p>Мёд проявляет антимикробную активность против S. aureus, E. coli, благодаря осмосу, pH 3,5–4,5 и перекиси водорода (Molan P.C., 2001).</p>
+        </div>
+        <div class="card">
+          <h3>🛡️ Прополис + воск</h3>
+          <p>Прополис усиливает регенерацию и снижает воспаление, воск создаёт защитную плёнку, продлевая действие мази.</p>
+        </div>
+        <div class="card">
+          <h3>🔁 Синергия с чехлом</h3>
+          <p>Чехол фиксирует мазь до 24 часов, предотвращает повторное загрязнение, увеличивая эффективность лечения в грязных условиях.</p>
+        </div>
+      </div>
+      <p style="margin-top: 24px; background: white; border-radius: 28px; padding: 20px; border-left: 4px solid #E6A017;">⭐ Результат: лечение без антибиотиков, без каренции, с сокращением сроков выздоровления на 30–40%.</p>
+    </div>
+  </div>
+
+  <!-- ПРЕИМУЩЕСТВА -->
+  <div class="section" style="background-color: #FEFAF0;">
+    <div class="container">
+      <h2>🔝 Ключевые преимущества</h2>
+      <div class="grid-3">
+        <div class="card">✅ <strong>Комплексность</strong> — защита + лечение в одном решении (аналогов нет в РФ).</div>
+        <div class="card">✅ <strong>Экономия до −67%</strong> по сравнению с традиционной терапией.</div>
+        <div class="card">✅ <strong>Без антибиотиков</strong> — молоко и мясо сразу после лечения.</div>
+        <div class="card">✅ <strong>Многоразовый чехол</strong> — до 30 применений, снижает расходы на перевязку.</div>
+        <div class="card">✅ <strong>Утилизация некондиционного мёда</strong> — поддержка локальных пчеловодов.</div>
+        <div class="card">✅ <strong>Адаптация к суровому климату</strong> и грязным выгулам.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- КОНТАКТЫ И КОМАНДА -->
+  <div class="container" id="contacts" style="margin-bottom: 70px;">
+    <div class="contact-info">
+      <h2 style="border-left-color: white; padding-left: 0;">📞 Свяжитесь с нами</h2>
+      <p style="font-size: 1.2rem; margin-bottom: 12px;">Готовы к пилоту, партнёрству и лицензированию в регионах.</p>
+      <p><strong>Владимиров Эрсан Витальевич</strong> — руководитель проекта<br>📱 <a href="tel:+79644279998" style="color:#2D2A24; font-weight: 600;">+7 (964) 427-99-98</a><br>✉️ <a href="mailto:vladimisan17@gmail.com" style="color:#2D2A24;">vladimisan17@gmail.com</a></p>
+      <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 28px; margin-top: 28px;">
+        <div><strong>🤝 Сивцева Ирина</strong><br>мотиватор</div>
+        <div><strong>📊 Гребцова Эмма</strong><br>аналитик</div>
+        <div><strong>🎨 Поротова Вилена</strong><br>дизайнер</div>
+      </div>
+      <div style="margin-top: 32px;">
+        <a href="mailto:vladimisan17@gmail.com" class="btn">✍️ Стать пилотным хозяйством</a>
+        <a href="#" class="btn-outline" style="margin-left: 12px;">📄 Скачать презентацию (PDF)</a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <p>© 2026 Якутский «МедоЧехол» — инновационное решение для КРС и МРС. Импортозамещение, экологичность, доступность.</p>
+    <p style="margin-top: 12px;">📍 Республика Саха (Якутия) | Регистрация как ветеринарной косметики | Масштабирование по РФ</p>
+  </div>
+</footer>
+
+</body>
+</html>
